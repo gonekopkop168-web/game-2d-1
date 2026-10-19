@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>ហ្គេមដើរតាមផ្លូវ 2D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loading">កំពុងផ្ទុក...</div>
+<div id="camera">
+  <div id="world">
+    <img id="bg" src="img/bg.jpg" alt="" draggable="false">
+    <img id="girl" src="img/girl.png" alt="" draggable="false">
+    <img id="player" src="img/idle.png" alt="" draggable="false">
+  </div>
+</div>
+<div id="musicBar">
+  <button id="btnNext" aria-label="ដូរបទ">⏭</button>
+  <button id="btnMusic" aria-label="ផ្អាក/លេងបទ">⏸</button>
+</div>
+<div id="controls">
+  <button id="btnLeft" aria-label="ថយក្រោយ">◀</button>
+  <button id="btnCarry" class="pill" disabled>🤗 បី</button>
+  <button id="btnRight" aria-label="ទៅមុខ">▶</button>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
