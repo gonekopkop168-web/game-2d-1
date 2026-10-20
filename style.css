@@ -41,3 +41,9 @@ html,body{margin:0;height:100%;overflow:hidden;background:#1b3a2a;font-family:"N
   background:rgba(170,90,230,.92);color:#fff;font-size:clamp(20px,5vmin,34px);font-family:inherit;font-weight:700;
   box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;touch-action:manipulation}
 #btnOutfit.show{display:block;animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+#btnSleep{position:fixed;z-index:6;left:max(18px,env(safe-area-inset-left));bottom:calc(clamp(64px,14vmin,110px) + 34px + env(safe-area-inset-bottom));
+  display:none;height:clamp(54px,11vmin,88px);padding:0 clamp(20px,5vmin,40px);border-radius:60px;border:3px solid rgba(255,255,255,.9);
+  background:rgba(60,110,220,.92);color:#fff;font-size:clamp(20px,5vmin,34px);font-family:inherit;font-weight:700;
+  box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;touch-action:manipulation}
+#btnSleep.show{display:block;animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+body.sleeping #controls,body.sleeping #btnHouse,body.sleeping #btnOutfit{display:none!important}
