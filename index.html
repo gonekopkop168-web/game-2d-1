@@ -7,14 +7,18 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="fade"></div>
+<button id="btnOutfit" class="pill house">👗 ប្ដូរឈុត</button>
+<button id="btnHouse" class="pill house">🏠 ផ្ទះ</button>
 <div id="loading">កំពុងផ្ទុក...</div>
 <div id="camera">
   <div id="world">
-    <img id="bg" src="img/bg.jpg" alt="" draggable="false">
+    <img id="bg" src="img/bg_wide.jpg" alt="" draggable="false">
     <img id="girl" src="img/girl.png" alt="" draggable="false">
     <img id="player" src="img/idle.png" alt="" draggable="false">
   </div>
 </div>
+<button id="btnSwitch" class="topbtn">🔄 👧</button>
 <div id="musicBar">
   <button id="btnNext" aria-label="ដូរបទ">⏭</button>
   <button id="btnMusic" aria-label="ផ្អាក/លេងបទ">⏸</button>
@@ -24,6 +28,7 @@
   <button id="btnCarry" class="pill" disabled>🤗 បី</button>
   <button id="btnRight" aria-label="ទៅមុខ">▶</button>
 </div>
+<script>window.onerror=function(m,s,l){var e=document.getElementById("loading");if(e){e.textContent="Error: "+m+" (line "+l+")";e.style.fontSize="16px";e.style.padding="20px"}};</script>
 <script src="game.js"></script>
 </body>
 </html>

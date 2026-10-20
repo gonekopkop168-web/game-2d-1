@@ -23,3 +23,21 @@ html,body{margin:0;height:100%;overflow:hidden;background:#1b3a2a;font-family:"N
   background:rgba(255,105,150,.55);color:#fff;font-size:clamp(20px,4.5vmin,30px);backdrop-filter:blur(4px);
   box-shadow:0 4px 14px rgba(0,0,0,.35);cursor:pointer;touch-action:manipulation;padding:0;line-height:1}
 #btnMusic.off{background:rgba(120,120,120,.6)}
+#btnSwitch{position:fixed;z-index:5;top:max(14px,env(safe-area-inset-top));left:max(14px,env(safe-area-inset-left));
+  height:clamp(46px,9vmin,64px);padding:0 clamp(14px,3vmin,24px);border-radius:60px;border:3px solid rgba(255,255,255,.85);
+  background:rgba(255,105,150,.55);color:#fff;font-size:clamp(18px,4vmin,28px);font-weight:700;backdrop-filter:blur(4px);
+  box-shadow:0 4px 14px rgba(0,0,0,.35);cursor:pointer;touch-action:manipulation}
+#btnSwitch:disabled{opacity:.45;background:rgba(120,120,120,.6)}
+#fade{position:fixed;inset:0;z-index:8;background:#000;opacity:0;pointer-events:none;transition:opacity .4s}
+#btnHouse{position:fixed;z-index:6;right:max(18px,env(safe-area-inset-right));bottom:calc(clamp(64px,14vmin,110px) + 34px + env(safe-area-inset-bottom));
+  display:none;height:clamp(54px,11vmin,88px);padding:0 clamp(20px,5vmin,40px);border-radius:60px;border:3px solid rgba(255,255,255,.9);
+  background:rgba(255,150,40,.9);color:#fff;font-size:clamp(20px,5vmin,34px);font-family:inherit;font-weight:700;
+  box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;touch-action:manipulation}
+#btnHouse.show{display:block;animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(0) translateY(30px)}to{transform:scale(1) translateY(0)}}
+#btnOutfit{position:fixed;z-index:6;right:max(18px,env(safe-area-inset-right));
+  bottom:calc(clamp(64px,14vmin,110px) + 34px + clamp(54px,11vmin,88px) + 14px + env(safe-area-inset-bottom));
+  display:none;height:clamp(54px,11vmin,88px);padding:0 clamp(20px,5vmin,40px);border-radius:60px;border:3px solid rgba(255,255,255,.9);
+  background:rgba(170,90,230,.92);color:#fff;font-size:clamp(20px,5vmin,34px);font-family:inherit;font-weight:700;
+  box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;touch-action:manipulation}
+#btnOutfit.show{display:block;animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
