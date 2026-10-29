@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="km">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>ហ្គេមដើរតាមផ្លូវ 2D</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffedf3" />
+  <title>សារស្នេហាជូននី ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="fade"></div>
-<button id="btnSleep" class="pill house">🛏 គេង</button>
-<button id="btnOutfit" class="pill house">👗 ប្ដូរឈុត</button>
-<button id="btnHouse" class="pill house">🏠 ផ្ទះ</button>
-<div id="loading">កំពុងផ្ទុក...</div>
-<div id="camera">
-  <div id="world">
-    <img id="bg" src="img/bg_wide.jpg" alt="" draggable="false">
-    <img id="girl" src="img/girl.png" alt="" draggable="false">
-    <img id="player" src="img/idle.png" alt="" draggable="false">
-  </div>
-</div>
-<button id="btnSwitch" class="topbtn">🔄 👧</button>
-<div id="musicBar">
-  <button id="btnNext" aria-label="ដូរបទ">⏭</button>
-  <button id="btnMusic" aria-label="ផ្អាក/លេងបទ">⏸</button>
-</div>
-<div id="controls">
-  <button id="btnLeft" aria-label="ថយក្រោយ">◀</button>
-  <button id="btnCarry" class="pill" disabled>🤗 បី</button>
-  <button id="btnRight" aria-label="ទៅមុខ">▶</button>
-</div>
-<script>window.onerror=function(m,s,l){var e=document.getElementById("loading");if(e){e.textContent="Error: "+m+" (line "+l+")";e.style.fontSize="16px";e.style.padding="20px"}};</script>
-<script src="game.js"></script>
+
+  <audio id="backgroundAudio" src="background-song.mp3" loop preload="auto"></audio>
+
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <main class="page">
+
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="បើកតន្ត្រីផ្ទៃខាងក្រោយ">
+      <span id="musicIcon">♫</span> <span id="musicLabel">បើកបទចម្រៀង 🎵</span>
+    </button>
+
+    <header class="top">
+      <div class="badge">♡ A LITTLE LOVE FOR YOU ♡</div>
+      <h1>សម្រាប់ <span>នី</span> ជាទីស្រឡាញ់ 💗</h1>
+      <p class="subtitle">សារតូចៗពីបេះដូងមួយ ដែលនឹកអូនជារៀងរាល់ថ្ងៃ</p>
+    </header>
+
+    <section class="love-card" aria-live="polite">
+      <div class="big-heart" id="bigHeart">♥</div>
+      <div class="counter" id="counter">សារ ១ ក្នុងចំណោម ១០០</div>
+      <p class="message" id="message">អូននីជាមនុស្សពិសេសបំផុតនៅក្នុងបេះដូងបង ❤️</p>
+      <div class="line"></div>
+      <p class="tiny">អានយឺតៗណា… សារនីមួយៗមានន័យពីបេះដូង 💌</p>
+      <div class="actions">
+        <button class="btn secondary" id="prevBtn" type="button">← សារមុន</button>
+        <button class="btn primary" id="nextBtn" type="button">សារបន្ទាប់ 💕 →</button>
+      </div>
+      <div class="dots" id="dots" aria-label="វឌ្ឍនភាពសារ">
+        <div class="progress"><div id="progressFill"></div></div>
+      </div>
+    </section>
+
+    <button class="surprise-btn" id="surpriseBtn" type="button">🎁 ចុចមើលសារពិសេសសម្រាប់នី</button>
+    <section class="surprise hidden" id="surprise" aria-live="polite">
+      <div class="surprise-icon">💝</div>
+      <h2>នីអើយ បងមានរឿងចង់ប្រាប់…</h2>
+      <p>បងប្រហែលមិនអាចរកពាក្យស្អាតៗមកពិពណ៌នាអារម្មណ៍ទាំងអស់បានទេ។ តែបងចង់ឱ្យអូនដឹងថា អូនជាមនុស្សពិសេសសម្រាប់បង។ បងចង់ឃើញអូនញញឹម ចង់ស្ដាប់អូននិយាយ និងចង់ឱ្យយើងចេះយល់ចិត្តគ្នា ស្មោះត្រង់ និងគាំទ្រគ្នាទៅវិញទៅមក។ អរគុណដែលបានចូលមកក្នុងជីវិតបង។ បងស្រឡាញ់អូនណា នី ❤️🌷</p>
+      <button class="btn primary" id="closeSurprise" type="button">អូនអានហើយ 💗</button>
+    </section>
+
+    <footer>បង្កើតដោយក្ដីស្រឡាញ់ សម្រាប់នី 💗<br><span>Made with love, just for Ny</span></footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
