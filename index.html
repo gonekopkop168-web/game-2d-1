@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="km">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffedf3" />
-  <title>សារស្នេហាជូននី ❤️</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>រកមិនឃើញ ៤០៤</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  min-height: 100vh; display: flex; justify-content: center; align-items: center;
+  overflow: hidden; background: #000;
+  font-family: "Khmer OS Muol", "Khmer OS", serif;
+}
+.error-box {
+  position: relative;
+  width: min(94vw, 920px);
+  min-height: 250px;
+  padding: 46px 28px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex; justify-content: center; align-items: center;
+  background: #000 url("eyes-background.gif") center center / cover no-repeat;
+  box-shadow: 0 0 35px rgba(255, 45, 45, .28);
+  animation: float 3s ease-in-out infinite;
+}
+.error-box::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0, 0, 0, .28);
+}
+h1 { position: relative; z-index: 1; width: 100%; }
+h1 svg { display: block; width: 100%; height: auto; overflow: visible; }
+.khmer-stroke {
+  font-family: "Khmer OS Muol", "Khmer OS", serif;
+  font-size: 100px; font-weight: normal;
+  fill: transparent; stroke: url(#strokeGradient); stroke-width: 2.5px;
+  stroke-linejoin: round; stroke-linecap: round;
+  stroke-dasharray: 1800; stroke-dashoffset: 1800;
+  animation: drawStroke 5s ease-in-out infinite, strokeGlow 2s ease-in-out infinite alternate;
+}
+@keyframes drawStroke {
+  0% { stroke-dashoffset: 1800; }
+  65%, 100% { stroke-dashoffset: 0; }
+}
+@keyframes strokeGlow {
+  from { filter: drop-shadow(0 0 3px #00eaff); }
+  to { filter: drop-shadow(0 0 12px #ff00dd); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@media (max-width: 520px) {
+  .error-box { min-height: 190px; padding: 32px 12px; }
+  .khmer-stroke { font-size: 100px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .error-box, .khmer-stroke { animation: none; }
+}
+</style>
 </head>
 <body>
-
-  <audio id="backgroundAudio" src="background-song.mp3" loop preload="auto"></audio>
-
-  <div class="hearts" id="hearts" aria-hidden="true"></div>
-  <main class="page">
-
-    <button class="music-toggle" id="musicToggle" type="button" aria-label="បើកតន្ត្រីផ្ទៃខាងក្រោយ">
-      <span id="musicIcon">♫</span> <span id="musicLabel">បើកបទចម្រៀង 🎵</span>
-    </button>
-
-    <header class="top">
-      <div class="badge">♡ A LITTLE LOVE FOR YOU ♡</div>
-      <h1>សម្រាប់ <span>នី</span> ជាទីស្រឡាញ់ 💗</h1>
-      <p class="subtitle">សារតូចៗពីបេះដូងមួយ ដែលនឹកអូនជារៀងរាល់ថ្ងៃ</p>
-    </header>
-
-    <section class="love-card" aria-live="polite">
-      <div class="big-heart" id="bigHeart">♥</div>
-      <div class="counter" id="counter">សារ ១ ក្នុងចំណោម ១០០</div>
-      <p class="message" id="message">អូននីជាមនុស្សពិសេសបំផុតនៅក្នុងបេះដូងបង ❤️</p>
-      <div class="line"></div>
-      <p class="tiny">អានយឺតៗណា… សារនីមួយៗមានន័យពីបេះដូង 💌</p>
-      <div class="actions">
-        <button class="btn secondary" id="prevBtn" type="button">← សារមុន</button>
-        <button class="btn primary" id="nextBtn" type="button">សារបន្ទាប់ 💕 →</button>
-      </div>
-      <div class="dots" id="dots" aria-label="វឌ្ឍនភាពសារ">
-        <div class="progress"><div id="progressFill"></div></div>
-      </div>
-    </section>
-
-    <button class="surprise-btn" id="surpriseBtn" type="button">🎁 ចុចមើលសារពិសេសសម្រាប់នី</button>
-    <section class="surprise hidden" id="surprise" aria-live="polite">
-      <div class="surprise-icon">💝</div>
-      <h2>នីអើយ បងមានរឿងចង់ប្រាប់…</h2>
-      <p>បងប្រហែលមិនអាចរកពាក្យស្អាតៗមកពិពណ៌នាអារម្មណ៍ទាំងអស់បានទេ។ តែបងចង់ឱ្យអូនដឹងថា អូនជាមនុស្សពិសេសសម្រាប់បង។ បងចង់ឃើញអូនញញឹម ចង់ស្ដាប់អូននិយាយ និងចង់ឱ្យយើងចេះយល់ចិត្តគ្នា ស្មោះត្រង់ និងគាំទ្រគ្នាទៅវិញទៅមក។ អរគុណដែលបានចូលមកក្នុងជីវិតបង។ បងស្រឡាញ់អូនណា នី ❤️🌷</p>
-      <button class="btn primary" id="closeSurprise" type="button">អូនអានហើយ 💗</button>
-    </section>
-
-    <footer>បង្កើតដោយក្ដីស្រឡាញ់ សម្រាប់នី 💗<br><span>Made with love, just for Ny</span></footer>
-  </main>
-  <script src="script.js"></script>
+<div class="error-box">
+  <h1 aria-label="រកមិនឃើញ ៤០៤">
+    <svg viewBox="0 0 900 190" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#00f5ff"/>
+          <stop offset="35%" stop-color="#a855f7"/>
+          <stop offset="70%" stop-color="#ff4ecd"/>
+          <stop offset="100%" stop-color="#00f5ff"/>
+          <animate attributeName="x1" values="0%;100%;0%" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="x2" values="100%;200%;100%" dur="4s" repeatCount="indefinite"/>
+        </linearGradient>
+      </defs>
+      <text class="khmer-stroke" x="450" y="130" text-anchor="middle">SORRY ដែលបំផ្លាញវា</text>
+    </svg>
+  </h1>
+</div>
 </body>
 </html>
